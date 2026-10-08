@@ -1,0 +1,91 @@
+.system-diagram {
+  background: var(--ink);
+  color: white;
+  border-radius: var(--radius);
+  padding: clamp(1.5rem, 4vw, 3rem);
+  margin: 0;
+}
+.diagram-overline {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--signal);
+}
+.diagram-workspace {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.diagram-step button {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  text-align: left;
+  padding: 1rem;
+  border: 1px solid #547382;
+  border-radius: 10px;
+  background: transparent;
+  color: white;
+}
+.diagram-step button[aria-pressed="true"] {
+  background: #24495b;
+  border-color: var(--signal);
+}
+.diagram-step strong,
+.diagram-step small {
+  display: block;
+}
+.diagram-step small {
+  color: #b7ced6;
+}
+.diagram-index {
+  color: var(--signal);
+}
+.diagram-connection {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.6rem;
+  font-size: 0.8rem;
+  color: #b7ced6;
+}
+.diagram-detail {
+  border-top: 1px solid #547382;
+  padding-top: 1rem;
+}
+.diagram-detail h3 {
+  font-size: 1.75rem;
+}
+.diagram-io {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.diagram-io dt {
+  color: var(--signal);
+}
+.diagram-io dd {
+  margin: 0;
+}
+.diagram-exception {
+  font-size: 0.875rem;
+}
+.diagram-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.diagram-controls button {
+  background: transparent;
+  color: white;
+  border: 1px solid #7295a5;
+  padding: 0.7rem 1rem;
+  border-radius: 30px;
+  display: flex;
+  gap: 1rem;
+}
+.diagram-feedback {
+  color: #b7ced6;
+  font-size: 0.875rem;
+}
