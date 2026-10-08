@@ -1,3 +1,4 @@
+import ServiceCards from "./components/service-cards";
 import Link from "next/link";
 import { site } from "../config/site";
 export default function Home() {
@@ -26,6 +27,11 @@ export default function Home() {
           <span>03 / Improve</span>
           <div className="art-ring" />
         </div>
+      </section>
+      <section className="section container">
+        <p className="eyebrow">What you could offer</p>
+        <h2>Room for your expertise.</h2>
+        <ServiceCards />
       </section>
     </>
   );
