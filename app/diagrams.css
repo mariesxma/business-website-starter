@@ -89,3 +89,39 @@
   color: #b7ced6;
   font-size: 0.875rem;
 }
+
+.diagram-stack .diagram-map {
+  display: grid;
+  grid-template-columns: 1fr 0.65fr;
+  gap: 1rem;
+}
+.diagram-stack .diagram-step {
+  margin-bottom: 0.5rem;
+}
+.layer-visual svg {
+  width: 100%;
+}
+.plane-face {
+  fill: #24495b;
+  stroke: #7cabb5;
+}
+.plane-edge,
+.plane-grid,
+.stack-spine {
+  fill: none;
+  stroke: #567887;
+}
+.stack-plane.active .plane-face {
+  fill: #397b7b;
+  stroke: var(--signal);
+}
+.stack-plane text {
+  fill: white;
+  font-size: 14px;
+}
+.layer-visual span {
+  display: block;
+  font-size: 0.75rem;
+  color: #b7ced6;
+  text-align: center;
+}
