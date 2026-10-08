@@ -180,3 +180,12 @@ nav a:hover {
 .skip-link:focus {
   top: 1rem;
 }
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding-block: 2.5rem;
+  border-top: 1px solid var(--line);
+}
