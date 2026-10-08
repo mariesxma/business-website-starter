@@ -4,9 +4,10 @@ import { validateEnquiry } from "../../lib/enquiry";
 export default function ContactForm() {
   const [busy, setBusy] = useState(false),
     [notice, setNotice] = useState("");
+  const [sent, setSent] = useState(false);
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (busy) return;
+    if (busy || sent) return;
     const data = Object.fromEntries(new FormData(event.currentTarget));
     const valid = validateEnquiry(data);
     if (!valid.ok) {
@@ -27,6 +28,7 @@ export default function ContactForm() {
       const result = await response.json();
       if (!response.ok || result.ok !== true)
         throw new Error(result.error || "Could not submit your enquiry.");
+      setSent(true);
       setNotice(
         result.demo
           ? "Demo complete. Nothing was emailed or saved to a database."
@@ -46,7 +48,15 @@ export default function ContactForm() {
     }
   }
   return (
-    <form className="contact-form card" onSubmit={submit} aria-busy={busy}>
+    <form
+      className="contact-form card"
+      onSubmit={submit}
+      onChange={() => {
+        setSent(false);
+        setNotice("");
+      }}
+      aria-busy={busy}
+    >
       <p className="small">
         All fields are required unless marked optional. Please use fictional
         details when trying the demo.
@@ -122,11 +132,13 @@ export default function ContactForm() {
         <p className="small">
           Read the <a href="/privacy">privacy information</a> before submitting.
         </p>
-        <button className="button" type="submit">
-          {busy ? "Submitting…" : "Submit enquiry"}
+        <button className="button" type="submit" disabled={busy || sent}>
+          {sent ? "Submitted" : busy ? "Submitting…" : "Submit enquiry"}
         </button>
       </fieldset>
-      <p role="status">{notice}</p>
+      <p role="status" aria-live="polite" aria-atomic="true">
+        {notice}
+      </p>
       <noscript>
         This form needs JavaScript. Please use the email link above.
       </noscript>
