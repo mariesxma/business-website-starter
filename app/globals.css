@@ -189,3 +189,42 @@ nav a:hover {
   padding-block: 2.5rem;
   border-top: 1px solid var(--line);
 }
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  align-items: center;
+  gap: 4rem;
+}
+.hero-art {
+  position: relative;
+  isolation: isolate;
+  min-height: 390px;
+  padding: 2.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--ink);
+  color: var(--signal);
+  border-radius: var(--radius);
+}
+.hero-art span {
+  position: relative;
+  z-index: 1;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+}
+.art-ring {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  right: -120px;
+  top: 40px;
+  border: 1px solid #537d86;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 35px #ffffff08,
+    0 0 0 70px #ffffff08,
+    0 0 0 105px #ffffff08;
+}
