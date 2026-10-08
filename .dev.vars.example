@@ -1,0 +1,4 @@
+CONTACT_MODE="demo"
+SITE_ORIGIN="http://localhost:3000"
+BUSINESS_NAME="Example Studio"
+# Live mode additionally requires CONTACT_TO, CONTACT_FROM and ENQUIRY_EMAIL.
