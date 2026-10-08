@@ -318,3 +318,45 @@ input[type="range"] {
     grid-template-columns: 1fr;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  .site-header,
+  .site-footer,
+  .actions,
+  .diagram-controls,
+  .hero-art {
+    display: none;
+  }
+  .section {
+    padding-block: 1rem;
+  }
+  .card,
+  .system-diagram {
+    break-inside: avoid;
+    box-shadow: none;
+  }
+  a {
+    color: inherit;
+  }
+  .system-diagram {
+    background: white;
+    color: black;
+  }
+  .diagram-step button,
+  .diagram-controls button {
+    color: black;
+  }
+}
