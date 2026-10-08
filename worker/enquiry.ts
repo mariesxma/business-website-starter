@@ -32,6 +32,19 @@ export async function handleEnquiry(
     return reply(403, {
       error: "Please submit your enquiry from our contact page.",
     });
+  const ip = request.headers.get("CF-Connecting-IP");
+  if (!ip && !services.demo)
+    return reply(503, {
+      error: "The contact form is temporarily unavailable.",
+    });
+  try {
+    if (!(await services.allowRequest(ip || "local-demo")))
+      return reply(429, { error: "Please wait a minute before trying again." });
+  } catch {
+    return reply(503, {
+      error: "The contact form is temporarily unavailable.",
+    });
+  }
   try {
     const data = await readJson(request);
     const message = createEnquiryEmail(
