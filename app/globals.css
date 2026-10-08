@@ -266,3 +266,18 @@ summary {
   border-radius: 8px;
   background: var(--accent);
 }
+
+.gallery {
+  display: grid;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+input[type="range"] {
+  display: block;
+  width: 100%;
+  margin-top: 1.5rem;
+  accent-color: var(--accent);
+}
+.grid figure {
+  margin: 0;
+}
