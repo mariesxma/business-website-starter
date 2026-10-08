@@ -281,3 +281,40 @@ input[type="range"] {
 .grid figure {
   margin: 0;
 }
+
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .hero-art {
+    min-height: 260px;
+  }
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav {
+    gap: 1rem;
+  }
+  .diagram-workspace {
+    grid-template-columns: 1fr;
+  }
+  .diagram-stack .diagram-map {
+    grid-template-columns: 1fr 0.5fr;
+  }
+  h1 {
+    max-width: 100%;
+  }
+}
+@media (max-width: 380px) {
+  .diagram-stack .diagram-map {
+    grid-template-columns: 1fr;
+  }
+  .layer-visual {
+    display: none;
+  }
+  .diagram-io {
+    grid-template-columns: 1fr;
+  }
+}
