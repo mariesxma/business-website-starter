@@ -21,4 +21,9 @@
       },
     },
   ],
+  "vars": {
+    "CONTACT_MODE": "demo",
+    "SITE_ORIGIN": "https://example.com",
+    "BUSINESS_NAME": "Example Studio",
+  },
 }
