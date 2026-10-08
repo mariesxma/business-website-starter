@@ -16,7 +16,8 @@
     "check": "npm run lint && npm run typecheck && npm test && npm run build",
     "db:generate": "drizzle-kit generate",
     "check:config": "node scripts/check-config.mjs",
-    "check:template": "node scripts/check-template.mjs"
+    "check:template": "node scripts/check-template.mjs",
+    "test:render": "TEST_BUILT_WORKER=1 node --test tests/rendered-html.test.mjs"
   },
   "dependencies": {
     "drizzle-orm": "0.45.2",
