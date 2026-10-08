@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS resources (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  title TEXT NOT NULL,
+  description TEXT NOT NULL,
+  published INTEGER NOT NULL DEFAULT 0 CHECK (published IN (0,1))
+);
