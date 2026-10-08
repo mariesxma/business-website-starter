@@ -1,2 +1,5 @@
-# business-website-starter
-A customizable business website starter with a React frontend, Cloudflare contact-form backend, email delivery, spam protection, and an optional database example.
+# Business website starter
+
+A React business website and Cloudflare backend. This repository is being assembled through an ordered series of pull requests.
+
+Use Node.js 24 and run `npm ci`, then `npm run dev`.
