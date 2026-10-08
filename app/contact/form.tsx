@@ -15,8 +15,11 @@ export default function ContactForm() {
     }
     setBusy(true);
     setNotice("");
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 15000);
     try {
       const response = await fetch("/api/enquiry", {
+        signal: controller.signal,
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -30,8 +33,15 @@ export default function ContactForm() {
           : "Your enquiry was accepted for email delivery.",
       );
     } catch (error) {
-      setNotice(error instanceof Error ? error.message : "Please try again.");
+      setNotice(
+        error instanceof Error && error.name === "AbortError"
+          ? "Delivery could not be confirmed. Your details are still here. Check before submitting again."
+          : error instanceof Error
+            ? error.message
+            : "Please try again.",
+      );
     } finally {
+      clearTimeout(timer);
       setBusy(false);
     }
   }
