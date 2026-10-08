@@ -1,3 +1,4 @@
+import FAQ from "./components/faq";
 import ServiceCards from "./components/service-cards";
 import Link from "next/link";
 import { site } from "../config/site";
@@ -33,6 +34,7 @@ export default function Home() {
         <h2>Room for your expertise.</h2>
         <ServiceCards />
       </section>
+      <FAQ />
     </>
   );
 }

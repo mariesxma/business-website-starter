@@ -228,3 +228,12 @@ nav a:hover {
     0 0 0 70px #ffffff08,
     0 0 0 105px #ffffff08;
 }
+
+details {
+  border-bottom: 1px solid var(--line);
+  padding: 1.2rem 0;
+}
+summary {
+  cursor: pointer;
+  font-weight: 650;
+}
