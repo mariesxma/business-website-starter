@@ -1,6 +1,9 @@
+import { handleResources } from "./resources";
+import type { Database } from "../db/resources";
 import handler from "vinext/server/app-router-entry";
 import { handleEnquiry } from "./enquiry";
 export interface Env {
+  DB?: Database;
   ASSETS?: { fetch(request: Request): Promise<Response> };
   CONTACT_MODE?: string;
   SITE_ORIGIN?: string;
@@ -27,6 +30,8 @@ export default {
     ctx: Parameters<typeof handler.fetch>[2],
   ): Promise<Response> {
     const url = new URL(request.url);
+    if (url.pathname === "/api/resources")
+      return handleResources(request, env.DB);
     if (url.pathname === "/api/enquiry") {
       const demo = env.CONTACT_MODE !== "live";
       if (
