@@ -3,6 +3,7 @@ import { site } from "../config/site";
 import type { ReactNode } from "react";
 import Footer from "./components/footer";
 import Header from "./components/header";
+import "./diagrams.css";
 import "./globals.css";
 export const metadata: Metadata = {
   icons: { icon: "/favicon.svg" },
