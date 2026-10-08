@@ -47,6 +47,8 @@ export async function handleEnquiry(
   }
   try {
     const data = await readJson(request);
+    if (data.website)
+      return reply(400, { error: "We could not accept this enquiry." });
     const message = createEnquiryEmail(
       data,
       services.recipient,
