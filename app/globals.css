@@ -139,3 +139,44 @@ p {
   gap: 0.8rem;
   margin-top: 2rem;
 }
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  align-items: center;
+  padding-block: 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+.wordmark {
+  font-size: 1.25rem;
+  font-weight: 750;
+  text-decoration: none;
+  color: var(--ink);
+  white-space: nowrap;
+}
+nav {
+  display: flex;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+}
+nav a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 0.5rem 0;
+}
+nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 1rem;
+  z-index: 20;
+  background: var(--surface);
+  padding: 1rem;
+}
+.skip-link:focus {
+  top: 1rem;
+}
