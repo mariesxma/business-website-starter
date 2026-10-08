@@ -1,7 +1,20 @@
+import type { Metadata } from "next";
+import { site } from "../config/site";
 import type { ReactNode } from "react";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import "./globals.css";
+export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
+  title: { default: site.name, template: `%s | ${site.name}` },
+  description: site.description,
+  openGraph: {
+    title: site.name,
+    description: site.description,
+    type: "website",
+  },
+  robots: { index: true, follow: true },
+};
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
