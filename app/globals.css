@@ -250,3 +250,19 @@ summary {
   color: var(--accent);
   font-weight: bold;
 }
+
+.metric-bars dd {
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.metric-bars > div {
+  margin-block: 1rem;
+}
+.bar {
+  display: block;
+  height: 16px;
+  border-radius: 8px;
+  background: var(--accent);
+}
