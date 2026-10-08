@@ -5,6 +5,7 @@ import Footer from "./components/footer";
 import Header from "./components/header";
 import "./globals.css";
 export const metadata: Metadata = {
+  icons: { icon: "/favicon.svg" },
   metadataBase: new URL(site.url),
   title: { default: site.name, template: `%s | ${site.name}` },
   description: site.description,
