@@ -14,7 +14,43 @@ export type DiagramDefinition = {
   feedback: string;
   steps: DiagramStep[];
 };
-export const diagrams: Record<"workflow", DiagramDefinition> = {
+export const diagrams: Record<"workflow" | "layers", DiagramDefinition> = {
+  layers: {
+    title: "How this starter fits together",
+    kind: "stack",
+    caption: "Application structure",
+    feedback: "Start with the pages and enable the backend services you need.",
+    steps: [
+      {
+        title: "Hosting",
+        label: "Cloudflare Worker",
+        detail: "A Worker serves the application and its assets.",
+        input: "A deployment",
+        output: "A reachable website",
+      },
+      {
+        title: "Backend",
+        label: "Contact endpoint",
+        detail: "Validate incoming enquiries before email delivery.",
+        input: "A submitted form",
+        output: "A delivery result",
+      },
+      {
+        title: "Components",
+        label: "Reusable presentation",
+        detail: "Share navigation, cards, and visual examples between pages.",
+        input: "Sample content",
+        output: "Page sections",
+      },
+      {
+        title: "Pages",
+        label: "Visitor experience",
+        detail: "Combine the sections into a clear website journey.",
+        input: "Routes and sections",
+        output: "A business website",
+      },
+    ],
+  },
   workflow: {
     title: "A simple project journey",
     kind: "flow",
