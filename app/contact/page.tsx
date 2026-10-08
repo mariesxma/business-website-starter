@@ -1,3 +1,4 @@
+import ContactForm from "./form";
 import { site } from "../../config/site";
 export default function Contact() {
   return (
@@ -14,6 +15,7 @@ export default function Contact() {
       <p>
         Email <a href={`mailto:${site.email}`}>{site.email}</a>.
       </p>
+      <ContactForm />
     </section>
   );
 }

@@ -360,3 +360,41 @@ input[type="range"] {
     color: black;
   }
 }
+
+.contact-form {
+  margin-top: 2rem;
+}
+.contact-form fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+.contact-form legend {
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+.contact-form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 650;
+}
+.contact-form :is(input, select, textarea) {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #889ca3;
+  border-radius: 8px;
+  color: var(--ink);
+  background: white;
+}
+.contact-form textarea {
+  resize: vertical;
+}
+.honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
