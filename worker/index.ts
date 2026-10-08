@@ -1,5 +1,6 @@
 import { handleResources } from "./resources";
 import type { Database } from "../db/resources";
+import { secureResponse } from "./security";
 import handler from "vinext/server/app-router-entry";
 import { handleEnquiry } from "./enquiry";
 export interface Env {
@@ -23,7 +24,7 @@ export interface Env {
     }): Promise<unknown>;
   };
 }
-export default {
+const application = {
   async fetch(
     request: Request,
     env: Env,
@@ -71,3 +72,14 @@ export default {
     return handler.fetch(request, env, ctx);
   },
 };
+
+const worker = {
+  async fetch(
+    request: Request,
+    env: Env,
+    ctx: Parameters<typeof handler.fetch>[2],
+  ) {
+    return secureResponse(await application.fetch(request, env, ctx));
+  },
+};
+export default worker;
